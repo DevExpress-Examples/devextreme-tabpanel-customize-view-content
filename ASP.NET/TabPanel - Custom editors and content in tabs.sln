@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29911.84
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TabPanel - Custom editors and content in tabs", "TabPanel - Custom editors and content in tabs\TabPanel - Custom editors and content in tabs.csproj", "{A8DCB4A3-AF62-46A2-A15D-EB9AA5989332}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DevExtreme NuGet.config", "DevExtreme NuGet.config", "{BD5F8B6A-5E12-418D-A13F-1C2DA4E40A9C}"
+	ProjectSection(SolutionItems) = preProject
+		NuGet.config = NuGet.config
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A8DCB4A3-AF62-46A2-A15D-EB9AA5989332}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A8DCB4A3-AF62-46A2-A15D-EB9AA5989332}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A8DCB4A3-AF62-46A2-A15D-EB9AA5989332}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A8DCB4A3-AF62-46A2-A15D-EB9AA5989332}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C3C6932B-125F-4BAA-B116-ACF29D9A7C60}
+	EndGlobalSection
+EndGlobal
