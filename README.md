@@ -5,17 +5,17 @@
 <!-- default badges end -->
 # TabPanel for DevExtreme - How to customize view content 
 
-This example demonstrates how to display DevExtreme components in a TabPanel view content area.
+This example demonstrates how to display DevExtreme components in a TabPanel's view content area.
 
 ![The TabPanel with an opened 'Charts' tab](devextreme-tabpanel-customize-view-content.png)
 
-The implementation methods differ depending on a framework. 
+The implementation methods differ depending on the framework.
 
 - In jQuery and ASP.NET Core, use the item's [template](https://js.devexpress.com/Documentation/ApiReference/UI_Widgets/dxTabPanel/Configuration/items/#template) option.
 
 - In Vue and Angular, specify [custom templates](https://js.devexpress.com/Documentation/Guide/UI_Components/Common/Templates/#Custom_Templates).
 
-- In React, declare components in the markup.
+- In React, declare components in markup.
 
 ## Files to Look At
 
