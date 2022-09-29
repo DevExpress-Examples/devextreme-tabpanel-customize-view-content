@@ -1,7 +1,7 @@
 $(function(){    
     $("#tabpanel-container").dxTabPanel({
         items: [{
-            title: "Data Grid",
+            title: "Data Grid", 
             icon: "rowfield",
             template: function (itemData, itemIndex, element) {
                 let dataGridDiv = $("<div>");
