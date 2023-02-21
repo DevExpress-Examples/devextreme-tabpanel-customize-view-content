@@ -17,7 +17,7 @@ The implementation methods differ depending on the framework.
 
 - In React, declare components in markup.
 
-## Files to Look At
+## Files to Review
 
 - **jQuery**
     - [index.html](jQuery/index.html)
