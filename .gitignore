@@ -307,4 +307,8 @@ TesterMetadata.xml
 */wwwroot/*
 
 !*/wwwroot/css/Site.css
+!*/wwwroot/js/
+!*/wwwroot/js/data/
+!*/wwwroot/js/data/**
+*/wwwroot/js/vendor.js
 *.DS_Store

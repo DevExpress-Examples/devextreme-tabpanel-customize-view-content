@@ -1,4 +1,4 @@
-﻿var populationData = [{
+﻿const populationData = [{
     arg: 1950,
     val: 2525778669
 }, {

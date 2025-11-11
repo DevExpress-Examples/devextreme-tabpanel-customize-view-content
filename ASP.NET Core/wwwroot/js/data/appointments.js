@@ -1,4 +1,4 @@
-﻿var appointments = [
+﻿const appointments = [
     {
         "text": "Website Re-Design Plan",
         "startDate": "2017-05-22T06:30:00.000Z",
