@@ -1,20 +1,48 @@
 import { Component } from '@angular/core';
-import { ClickEvent } from 'devextreme/ui/button';
+import {
+  DxChartModule,
+  DxDataGridModule,
+  DxFormModule,
+  DxSchedulerModule,
+  DxTabPanelModule,
+} from 'devextreme-angular';
+import {
+  Customer,
+  Population,
+  Employee,
+  Appointment,
+  Service,
+} from './app.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
+  standalone: true,
+  imports: [DxTabPanelModule, DxDataGridModule, DxChartModule, DxSchedulerModule, DxFormModule],
+  providers: [Service],
 })
 export class AppComponent {
-  title = 'Angular';
+  customers: Customer[];
 
-  counter = 0;
+  populationData: Population[];
 
-  buttonText = 'Click count: 0';
+  employee: Employee;
 
-  onClick(e: ClickEvent): void {
-    this.counter++;
-    this.buttonText = `Click count: ${this.counter}`;
+  positions: string[];
+
+  rules: Object;
+
+  appointmentsData: Appointment[];
+
+  currentDate: Date = new Date(2017, 4, 25);
+
+  constructor(service: Service) {
+    this.customers = service.getCustomers();
+    this.populationData = service.getPopulationData();
+    this.employee = service.getEmployee();
+    this.positions = service.getPositions();
+    this.rules = { X: /[02-9]/ };
+    this.appointmentsData = service.getAppointments();
   }
 }
