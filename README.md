@@ -21,16 +21,17 @@ The implementation methods differ depending on the framework.
 ## Files to Review
 
 - **jQuery**
-    - [index.html](jQuery/index.html)
+    - [index.html](jQuery/src/index.html)
+    - [index.js](jQuery/src/index.js)
 - **Angular**
     - [app.component.html](Angular/src/app/app.component.html)
     - [app.component.ts](Angular/src/app/app.component.ts)
 - **Vue**
-    - [App.vue](Vue/src/App.vue)
+    - [HomeContent.vue](Vue/src/components/HomeContent.vue)
 - **React**
-    - [App.js](React/src/App.js)
+    - [App.tsx](React/src/App.tsx)
 - **ASP.NET Core**    
-    - [Index.cshtml](ASP.NET/TabPanel/Views/Home/Index.cshtml)
+    - [Index.cshtml](<ASP.NET Core/Views/Home/Index.cshtml>)
 
 ## Documentation
 
