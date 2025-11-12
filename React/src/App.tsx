@@ -1,16 +1,105 @@
-import { useCallback, useState } from 'react';
 import './App.css';
 import 'devextreme/dist/css/dx.material.blue.light.compact.css';
-import Button from 'devextreme-react/button';
+import TabPanel, { Item } from 'devextreme-react/tab-panel';
+import DataGrid from 'devextreme-react/data-grid';
+import Chart, { Series } from 'devextreme-react/chart';
+import Form, { SimpleItem, RequiredRule } from 'devextreme-react/form';
+import Scheduler, { type SchedulerTypes } from 'devextreme-react/scheduler';
+import service, {
+  type Appointment, type Customer, type Employee, type Population,
+} from './data.js';
+
+const columns = ['CompanyName', 'City', 'State', 'Phone', 'Fax'];
+const currentDate = new Date(2017, 4, 25);
+const views: SchedulerTypes.ViewType[] = ['week', 'month'];
+
+const employee: Employee = service.getEmployee();
+const positions: string[] = service.getPositions();
+const customers: Customer[] = service.getCustomers();
+const appointments: Appointment[] = service.getAppointments();
+const populationData: Population[] = service.getPopulationData();
+const rules = { X: /[02-9]/ };
+
+const editorOptions = {
+  FirstName: { disabled: true },
+  Position: {
+    items: positions,
+    searchEnabled: true,
+    value: '',
+  },
+  LastName: { disabled: true },
+  HireDate: { width: '100%', value: null },
+  BirthDate: { width: '100%', disabled: true },
+  Notes: { height: 90 },
+  Phone: {
+    mask: '+1 (X00) 000-0000',
+    maskRules: rules,
+  },
+};
 
 function App(): JSX.Element {
-  var [count, setCount] = useState<number>(0);
-  const clickHandler = useCallback(() => {
-    setCount((prev) => prev + 1);
-  }, [setCount]);
   return (
-    <div className="main">
-      <Button text={`Click count: ${count}`} onClick={clickHandler} />
+    <div className='main'>
+      <TabPanel width={800} animationEnabled={true} swipeEnabled={true}>
+        <Item title='Data Grid' icon='rowfield'>
+          <DataGrid dataSource={customers} defaultColumns={columns} />
+        </Item>
+        <Item title='Chart' icon='chart'>
+          <Chart title='World Population by Decade' dataSource={populationData}>
+            <Series type='bar' />
+          </Chart>
+        </Item>
+        <Item title='Form' icon='floppy'>
+          <Form colCount={2} formData={employee}>
+            <SimpleItem
+              dataField='FirstName'
+              editorOptions={editorOptions.FirstName}
+            />
+            <SimpleItem
+              dataField='Position'
+              editorType='dxSelectBox'
+              editorOptions={editorOptions.Position}
+            >
+              <RequiredRule message='Position is required.' />
+            </SimpleItem>
+            <SimpleItem
+              dataField='LastName'
+              editorOptions={editorOptions.LastName}
+            />
+            <SimpleItem
+              dataField='HireDate'
+              editorType='dxDateBox'
+              editorOptions={editorOptions.HireDate}
+            >
+              <RequiredRule message='Hire Date is required.' />
+            </SimpleItem>
+            <SimpleItem
+              dataField='BirthDate'
+              editorType='dxDateBox'
+              editorOptions={editorOptions.BirthDate}
+            />
+            <SimpleItem dataField='Address' />
+            <SimpleItem
+              dataField='Notes'
+              colSpan={2}
+              editorType='dxTextArea'
+              editorOptions={editorOptions.Notes}
+            />
+            <SimpleItem dataField='Phone' editorOptions={editorOptions.Phone} />
+            <SimpleItem dataField='Email' />
+          </Form>
+        </Item>
+        <Item title='Scheduler' icon='event'>
+          <Scheduler
+            dataSource={appointments}
+            views={views}
+            defaultCurrentView='week'
+            defaultCurrentDate={currentDate}
+            height={600}
+            startDayHour={9}
+          />
+        </Item>
+      </TabPanel>
     </div>
   );
 }
