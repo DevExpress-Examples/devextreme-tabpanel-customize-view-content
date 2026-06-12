@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import {
   DxChartModule,
   DxDataGridModule,
@@ -20,6 +20,7 @@ import {
   styleUrls: ['./app.component.scss'],
   standalone: true,
   imports: [DxTabPanelModule, DxDataGridModule, DxChartModule, DxSchedulerModule, DxFormModule],
+  changeDetection: ChangeDetectionStrategy.Eager,
   providers: [Service],
 })
 export class AppComponent {
